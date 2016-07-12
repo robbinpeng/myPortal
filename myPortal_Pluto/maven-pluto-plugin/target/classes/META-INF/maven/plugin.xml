@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <name>Maven Pluto Installer Plugin</name>
+  <description>Apache Pluto is the Reference Implementation of the Java Portlet Specification.</description>
+  <groupId>org.apache.portals.pluto</groupId>
+  <artifactId>maven-pluto-plugin</artifactId>
+  <version>2.1.0-SNAPSHOT</version>
+  <goalPrefix>pluto2</goalPrefix>
+  <isolatedRealm>false</isolatedRealm>
+  <inheritedByDefault>true</inheritedByDefault>
+  <mojos>
+    <mojo>
+      <goal>reinstall</goal>
+      <description></description>
+      <requiresDependencyResolution>runtime</requiresDependencyResolution>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <implementation>org.apache.pluto.maven.ReinstallMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>artifactRepository</name>
+          <type>org.apache.maven.artifact.repository.ArtifactRepository</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>domain</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>host</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>installationDirectory</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>port</name>
+          <type>int</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>portalContext</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>project</name>
+          <type>org.apache.maven.project.MavenProject</type>
+          <required>true</required>
+          <editable>false</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>remoteRepositories</name>
+          <type>java.util.List</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>server</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>version</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <artifactRepository implementation="org.apache.maven.artifact.repository.ArtifactRepository">${localRepository}</artifactRepository>
+        <domain implementation="java.lang.String">${domain}</domain>
+        <host implementation="java.lang.String">${host}</host>
+        <installationDirectory implementation="java.io.File">${installDir}</installationDirectory>
+        <port implementation="int">${port}</port>
+        <portalContext implementation="java.lang.String" default-value="pluto">${ctx}</portalContext>
+        <project implementation="org.apache.maven.project.MavenProject">${project}</project>
+        <remoteRepositories implementation="java.util.List">${project.remoteArtifactRepositories}</remoteRepositories>
+        <server implementation="java.lang.String">${server}</server>
+        <version implementation="java.lang.String">${pom.currentVersion} default=</version>
+      </configuration>
+      <requirements>
+        <requirement>
+          <role>org.apache.maven.artifact.factory.ArtifactFactory</role>
+          <field-name>artifactFactory</field-name>
+        </requirement>
+        <requirement>
+          <role>org.apache.maven.artifact.resolver.ArtifactResolver</role>
+          <field-name>artifactResolver</field-name>
+        </requirement>
+      </requirements>
+    </mojo>
+    <mojo>
+      <goal>uninstall</goal>
+      <description></description>
+      <requiresDependencyResolution>runtime</requiresDependencyResolution>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <implementation>org.apache.pluto.maven.UninstallMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>artifactRepository</name>
+          <type>org.apache.maven.artifact.repository.ArtifactRepository</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>domain</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>host</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>installationDirectory</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>port</name>
+          <type>int</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>portalContext</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>project</name>
+          <type>org.apache.maven.project.MavenProject</type>
+          <required>true</required>
+          <editable>false</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>remoteRepositories</name>
+          <type>java.util.List</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>server</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>version</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <artifactRepository implementation="org.apache.maven.artifact.repository.ArtifactRepository">${localRepository}</artifactRepository>
+        <domain implementation="java.lang.String">${domain}</domain>
+        <host implementation="java.lang.String">${host}</host>
+        <installationDirectory implementation="java.io.File">${installDir}</installationDirectory>
+        <port implementation="int">${port}</port>
+        <portalContext implementation="java.lang.String" default-value="pluto">${ctx}</portalContext>
+        <project implementation="org.apache.maven.project.MavenProject">${project}</project>
+        <remoteRepositories implementation="java.util.List">${project.remoteArtifactRepositories}</remoteRepositories>
+        <server implementation="java.lang.String">${server}</server>
+        <version implementation="java.lang.String">${pom.currentVersion} default=</version>
+      </configuration>
+      <requirements>
+        <requirement>
+          <role>org.apache.maven.artifact.factory.ArtifactFactory</role>
+          <field-name>artifactFactory</field-name>
+        </requirement>
+        <requirement>
+          <role>org.apache.maven.artifact.resolver.ArtifactResolver</role>
+          <field-name>artifactResolver</field-name>
+        </requirement>
+      </requirements>
+    </mojo>
+    <mojo>
+      <goal>install</goal>
+      <description></description>
+      <requiresDependencyResolution>runtime</requiresDependencyResolution>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <implementation>org.apache.pluto.maven.InstallMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>artifactRepository</name>
+          <type>org.apache.maven.artifact.repository.ArtifactRepository</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>domain</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>host</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>installationDirectory</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>port</name>
+          <type>int</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>portalContext</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>project</name>
+          <type>org.apache.maven.project.MavenProject</type>
+          <required>true</required>
+          <editable>false</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>remoteRepositories</name>
+          <type>java.util.List</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>server</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>version</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <artifactRepository implementation="org.apache.maven.artifact.repository.ArtifactRepository">${localRepository}</artifactRepository>
+        <domain implementation="java.lang.String">${domain}</domain>
+        <host implementation="java.lang.String">${host}</host>
+        <installationDirectory implementation="java.io.File">${installDir}</installationDirectory>
+        <port implementation="int">${port}</port>
+        <portalContext implementation="java.lang.String" default-value="pluto">${ctx}</portalContext>
+        <project implementation="org.apache.maven.project.MavenProject">${project}</project>
+        <remoteRepositories implementation="java.util.List">${project.remoteArtifactRepositories}</remoteRepositories>
+        <server implementation="java.lang.String">${server}</server>
+        <version implementation="java.lang.String">${pom.currentVersion} default=</version>
+      </configuration>
+      <requirements>
+        <requirement>
+          <role>org.apache.maven.artifact.factory.ArtifactFactory</role>
+          <field-name>artifactFactory</field-name>
+        </requirement>
+        <requirement>
+          <role>org.apache.maven.artifact.resolver.ArtifactResolver</role>
+          <field-name>artifactResolver</field-name>
+        </requirement>
+      </requirements>
+    </mojo>
+    <mojo>
+      <goal>assemble</goal>
+      <description>The AssembleMojo is responsible for assembling a web application for deployment
+into the Pluto portlet container.  Assembly, in this context, is the process of
+updating a web application&apos;s WEB-INF/web.xml with Pluto specific parameters for 
+deployment in Pluto.   
+&lt;p&gt;
+This Mojo is able to operate on individual descriptors by specifying 
+&lt;code&gt;portletXml&lt;/code&gt;, &lt;code&gt;webXml&lt;/code&gt;, and &lt;code&gt;webXmlDestination&lt;/code&gt;.
+If your project uses standard Maven 2 directory layouts, the defaults will
+provide proper values.
+&lt;p/&gt;
+Example Maven 2 &lt;code&gt;pom.xml&lt;/code&gt; usage:
+&lt;pre&gt;
+&amp;lt;project&amp;gt;
+  ...
+  &amp;lt;build&amp;gt;
+     &amp;lt;plugins&amp;gt;
+         &amp;lt;plugin&amp;gt;
+             &amp;lt;groupId&amp;gt;org.apache.pluto&amp;lt;/groupId&amp;gt;
+             &amp;lt;artifactId&amp;gt;maven-pluto-plugin&amp;lt;/artifactId&amp;gt;
+         &amp;lt;/plugin&amp;gt;
+     &amp;lt;/plugins&amp;gt;
+  &amp;lt;/build&amp;gt;
+  ...
+&amp;lt;/project&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;
+This Mojo can also operate on entire WAR or EAR archive files by specifying
+a list of archive path names in &lt;code&gt;archives&lt;/code&gt;.
+&lt;p/&gt;
+Example Maven 2 &lt;code&gt;pom.xml&lt;/code&gt; usage:
+&lt;pre&gt;
+&amp;lt;project&amp;gt;
+  ...
+  &amp;lt;build&amp;gt;
+     &amp;lt;plugins&amp;gt;
+         &amp;lt;plugin&amp;gt;
+             &amp;lt;groupId&amp;gt;org.apache.pluto&amp;lt;/groupId&amp;gt;
+             &amp;lt;artifactId&amp;gt;maven-pluto-plugin&amp;lt;/artifactId&amp;gt;
+             &amp;lt;executions&amp;gt;
+                 &amp;lt;execution&amp;gt;
+                     &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
+                     &amp;lt;goals&amp;gt;
+                         &amp;lt;goal&amp;gt;assemble&amp;lt;/goal&amp;gt;
+                     &amp;lt;/goals&amp;gt;
+                     &amp;lt;configuration&amp;gt;
+                         &amp;lt;assemblyOutputDirectory&amp;gt;${project.build.directory}/assembled-wars&amp;lt;/assemblyOutputDirectory&amp;gt;
+                         &amp;lt;archives&amp;gt;
+                             &amp;lt;assembleArchive&amp;gt;
+                                 ${project.build.directory}/wartoassemble.war
+                             &amp;lt;/assembleArchive&amp;gt;
+                             &amp;lt;assembleArchive&amp;gt;
+                                 ${project.build.directory}/anotherwartoassemble.war
+                             &amp;lt;/assembleArchive&amp;gt;
+                         &amp;lt;/archives&amp;gt;
+                     &amp;lt;/configuration&amp;gt;
+                 &amp;lt;/execution&amp;gt;
+             &amp;lt;/executions&amp;gt;
+         &amp;lt;/plugin&amp;gt;
+     &amp;lt;/plugins&amp;gt;
+  &amp;lt;/build&amp;gt;
+  ...
+&amp;lt;/project&amp;gt;
+&lt;/pre&gt;</description>
+      <requiresDirectInvocation>false</requiresDirectInvocation>
+      <requiresProject>true</requiresProject>
+      <requiresReports>false</requiresReports>
+      <aggregator>false</aggregator>
+      <requiresOnline>false</requiresOnline>
+      <inheritedByDefault>true</inheritedByDefault>
+      <phase>process-resources</phase>
+      <implementation>org.apache.pluto.maven.AssembleMojo</implementation>
+      <language>java</language>
+      <instantiationStrategy>per-lookup</instantiationStrategy>
+      <executionStrategy>once-per-session</executionStrategy>
+      <parameters>
+        <parameter>
+          <name>archives</name>
+          <alias>warFiles</alias>
+          <type>java.util.List</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>A list of archive files to assemble.  Only EAR and WAR file
+types are supported.  
+&lt;p/&gt;
+Each value in the list is the absolute pathname to the 
+archive being assembled.
+&lt;p/&gt;
+This parameter is mutually exclusive with portletXml, webXml, 
+and webXmlDestination parameters.</description>
+        </parameter>
+        <parameter>
+          <name>assemblyOutputDirectory</name>
+          <alias>warFilesDestination</alias>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>Destination directory the assembled files are written out to.</description>
+        </parameter>
+        <parameter>
+          <name>dispatchServletClass</name>
+          <type>java.lang.String</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>The name of the dispatch servlet class to use</description>
+        </parameter>
+        <parameter>
+          <name>installationDirectory</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>portletXml</name>
+          <type>java.io.File</type>
+          <required>true</required>
+          <editable>true</editable>
+          <description>The portlet application descriptor (&lt;code&gt;WEB-INF/portlet.xml&lt;/code&gt;).</description>
+        </parameter>
+        <parameter>
+          <name>project</name>
+          <type>org.apache.maven.project.MavenProject</type>
+          <required>true</required>
+          <editable>false</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>warFiles</name>
+          <type>java.util.List</type>
+          <deprecated>see archives parameter</deprecated>
+          <required>false</required>
+          <editable>true</editable>
+          <description></description>
+        </parameter>
+        <parameter>
+          <name>warFilesDestination</name>
+          <type>java.io.File</type>
+          <deprecated>see assemblyOutputDirectory parameter</deprecated>
+          <required>false</required>
+          <editable>true</editable>
+          <description>Destination directory the assembled files are written out to.</description>
+        </parameter>
+        <parameter>
+          <name>webXml</name>
+          <type>java.io.File</type>
+          <required>true</required>
+          <editable>true</editable>
+          <description>The original webapp descriptor (&lt;code&gt;WEB-INF/web.xml&lt;/code&gt;).</description>
+        </parameter>
+        <parameter>
+          <name>webXmlDestination</name>
+          <type>java.io.File</type>
+          <required>false</required>
+          <editable>true</editable>
+          <description>The file to which the updated webapp descriptor is written.</description>
+        </parameter>
+      </parameters>
+      <configuration>
+        <assemblyOutputDirectory implementation="java.io.File">${project.build.directory}/pluto-assembled-wars</assemblyOutputDirectory>
+        <installationDirectory implementation="java.io.File">${installDir}</installationDirectory>
+        <portletXml implementation="java.io.File">${basedir}/src/main/webapp/WEB-INF/portlet.xml</portletXml>
+        <project implementation="org.apache.maven.project.MavenProject">${project}</project>
+        <webXml implementation="java.io.File">${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+        <webXmlDestination implementation="java.io.File">${project.build.directory}/pluto-resources/web.xml</webXmlDestination>
+      </configuration>
+    </mojo>
+  </mojos>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.portals.pluto</groupId>
+      <artifactId>pluto-util</artifactId>
+      <type>jar</type>
+      <version>2.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.portals.pluto</groupId>
+      <artifactId>pluto-container-api</artifactId>
+      <type>jar</type>
+      <version>2.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.portals.pluto</groupId>
+      <artifactId>pluto-container</artifactId>
+      <type>jar</type>
+      <version>2.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <type>jar</type>
+      <version>1.5.6</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <type>jar</type>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.stream</groupId>
+      <artifactId>stax-api</artifactId>
+      <type>jar</type>
+      <version>1.0-2</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <type>jar</type>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <type>jar</type>
+      <version>2.1.9</version>
+    </dependency>
+    <dependency>
+      <groupId>stax</groupId>
+      <artifactId>stax</artifactId>
+      <type>jar</type>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-cli</groupId>
+      <artifactId>commons-cli</artifactId>
+      <type>jar</type>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <type>jar</type>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <type>jar</type>
+      <version>1.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-jdk14</artifactId>
+      <type>jar</type>
+      <version>1.5.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-settings</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-file</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-parameter-documenter</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-http-lightweight</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-http-shared</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>jtidy</groupId>
+      <artifactId>jtidy</artifactId>
+      <type>jar</type>
+      <version>4aug2000r7-dev</version>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <type>jar</type>
+      <version>1.0.b2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-api</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-sink-api</artifactId>
+      <type>jar</type>
+      <version>1.0-alpha-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-profile</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-provider-api</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-container-default</artifactId>
+      <type>jar</type>
+      <version>1.0-alpha-9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-repository-metadata</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-error-diagnostics</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-registry</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-ssh-external</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-ssh-common</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-descriptor</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-interactivity-api</artifactId>
+      <type>jar</type>
+      <version>1.0-alpha-4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact-manager</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-monitor</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-ssh</artifactId>
+      <type>jar</type>
+      <version>1.0-beta-2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <type>jar</type>
+      <version>0.1.27</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <type>jar</type>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>classworlds</groupId>
+      <artifactId>classworlds</artifactId>
+      <type>jar</type>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-artifact</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-model</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <type>jar</type>
+      <version>2.0.5</version>
+    </dependency>
+  </dependencies>
+</plugin>

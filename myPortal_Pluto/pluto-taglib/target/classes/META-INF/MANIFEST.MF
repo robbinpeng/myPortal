@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-Description: Apache Pluto's Java Portlet Specification Tag Libr
+ ary implementation
+Implementation-Title: Apache Pluto Portlet Tag Library
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.portals.pluto.taglib
+Implementation-Version: 2.1.0-SNAPSHOT
+Built-By: ChiFuF
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1468289046599
+Bundle-DocURL: http://portals.apache.org/pluto/pluto-taglib
+Bundle-Vendor: The Apache Software Foundation
+Import-Package: javax.el,javax.portlet;version="2.0",javax.servlet,jav
+ ax.servlet.http,javax.servlet.jsp,javax.servlet.jsp.tagext,org.apache
+ .pluto.tags,org.apache.pluto.tags.el
+Tool: Bnd-0.0.357
+Export-Package: org.apache.pluto.tags;uses:="javax.portlet,javax.servl
+ et.jsp,javax.servlet.jsp.tagext,javax.servlet,javax.servlet.http",org
+ .apache.pluto.tags.el;uses:="javax.servlet.jsp,javax.servlet,org.apac
+ he.pluto.tags"
+Bundle-Version: 2.1.0.SNAPSHOT
+Bundle-Name: Apache Pluto Portlet Tag Library
+Created-By: Apache Maven Bundle Plugin
+Specification-Version: 2.1.0-SNAPSHOT
+Build-Jdk: 1.8.0_65
+

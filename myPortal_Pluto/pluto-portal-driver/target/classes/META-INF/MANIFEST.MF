@@ -1,0 +1,60 @@
+Manifest-Version: 1.0
+Bundle-Description: Apache Pluto is the Reference Implementation of th
+ e Java Portlet Specification.
+Implementation-Title: Apache Pluto Portal Driver
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.portals.pluto.portal-driver
+Implementation-Version: 2.1.0-SNAPSHOT
+Built-By: ChiFuF
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1468289062098
+Bundle-DocURL: http://portals.apache.org/pluto/pluto-portal-driver
+Bundle-Vendor: The Apache Software Foundation
+Import-Package: javax.ccpp,javax.portlet;version="2.0",javax.servlet,j
+ avax.servlet.http,javax.servlet.jsp,javax.servlet.jsp.tagext,org.apac
+ he.commons.io,org.apache.pluto.container,org.apache.pluto.container.d
+ river,org.apache.pluto.container.impl,org.apache.pluto.container.om.p
+ ortlet,org.apache.pluto.container.util,org.apache.pluto.driver,org.ap
+ ache.pluto.driver.config,org.apache.pluto.driver.container,org.apache
+ .pluto.driver.core,org.apache.pluto.driver.portlets,org.apache.pluto.
+ driver.services.portal,org.apache.pluto.driver.services.portal.admin,
+ org.apache.pluto.driver.tags,org.apache.pluto.driver.url,org.apache.p
+ luto.tags.el,org.apache.taglibs.standard.lang.support,org.slf4j;versi
+ on="1.5",org.springframework.web.context;resolution:=optional
+Tool: Bnd-0.0.357
+Export-Package: org.apache.pluto.driver;uses:="javax.servlet,org.apach
+ e.pluto.driver.services.portal,org.apache.pluto.container,org.slf4j,j
+ avax.servlet.http,org.apache.pluto.driver.url,org.apache.pluto.driver
+ .core,javax.portlet,org.springframework.web.context,org.apache.pluto.
+ driver.config,org.apache.pluto.driver.services.portal.admin",org.apac
+ he.pluto.driver.config;uses:="org.apache.pluto.driver.services.portal
+ .admin,javax.servlet,org.apache.pluto.container,org.apache.pluto.driv
+ er.services.portal,org.apache.pluto.driver.url,javax.portlet",org.apa
+ che.pluto.driver.container;uses:="javax.servlet,org.apache.pluto.cont
+ ainer.util,org.slf4j,org.apache.pluto.container,org.apache.pluto.cont
+ ainer.driver,org.apache.pluto.container.impl,javax.servlet.http,javax
+ .portlet,org.apache.pluto.container.om.portlet,javax.ccpp",org.apache
+ .pluto.driver.core;uses:="org.apache.pluto.driver,javax.servlet,org.s
+ lf4j,javax.servlet.http,org.apache.pluto.driver.url,org.apache.pluto.
+ driver.config,org.apache.pluto.container,org.apache.pluto.driver.serv
+ ices.portal,org.apache.pluto.container.driver,javax.portlet,org.apach
+ e.pluto.container.om.portlet",org.apache.pluto.driver.portlets;uses:=
+ "javax.portlet,org.apache.pluto.driver.services.portal,org.apache.plu
+ to.driver,org.slf4j,org.apache.pluto.driver.config,org.apache.commons
+ .io",org.apache.pluto.driver.services.portal.admin;uses:="javax.servl
+ et,org.apache.pluto.driver.services.portal,org.apache.pluto.driver.co
+ nfig",org.apache.pluto.driver.services.portal;uses:="org.slf4j,org.ap
+ ache.pluto.container,javax.portlet",org.apache.pluto.driver.tags;uses
+ :="javax.servlet,javax.servlet.http,org.apache.pluto.driver.url,org.a
+ pache.pluto.driver.core,javax.servlet.jsp.tagext,javax.portlet,javax.
+ servlet.jsp,org.slf4j,org.apache.pluto.driver,org.apache.taglibs.stan
+ dard.lang.support,org.apache.pluto.driver.config,org.apache.pluto.dri
+ ver.services.portal,org.apache.pluto.container,org.apache.pluto.tags.
+ el",org.apache.pluto.driver.url;uses:="javax.servlet,org.apache.pluto
+ .driver.services.portal,javax.portlet,javax.servlet.http"
+Bundle-Version: 2.1.0.SNAPSHOT
+Bundle-Name: Apache Pluto Portal Driver
+Created-By: Apache Maven Bundle Plugin
+Specification-Version: 2.1.0-SNAPSHOT
+Build-Jdk: 1.8.0_65
+

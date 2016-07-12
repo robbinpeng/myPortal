@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-Description: Apache Pluto is the Reference Implementation of th
+ e Java Portlet Specification.
+Implementation-Title: Apache Pluto Container API
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.portals.pluto.container-api
+Implementation-Version: 2.1.0-SNAPSHOT
+Built-By: ChiFuF
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1468289019283
+Bundle-DocURL: http://portals.apache.org/pluto/pluto-container-api
+Bundle-Vendor: The Apache Software Foundation
+Import-Package: javax.ccpp,javax.portlet;version="2.0",javax.servlet,j
+ avax.servlet.http,javax.xml.namespace,org.apache.pluto.container,org.
+ apache.pluto.container.om.portlet,org.w3c.dom
+Tool: Bnd-0.0.357
+Export-Package: org.apache.pluto.container;uses:="javax.ccpp,javax.ser
+ vlet.http,javax.portlet,javax.xml.namespace,org.apache.pluto.containe
+ r.om.portlet,javax.servlet,org.w3c.dom",org.apache.pluto.container.om
+ .portlet;uses:="javax.xml.namespace"
+Bundle-Version: 2.1.0.SNAPSHOT
+Bundle-Name: Apache Pluto Container API
+Created-By: Apache Maven Bundle Plugin
+Specification-Version: 2.1.0-SNAPSHOT
+Build-Jdk: 1.8.0_65
+

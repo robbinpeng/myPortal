@@ -1,0 +1,11 @@
+The Apache Pluto source repositories have moved to git.
+
+Read-only:
+
+  https://git.apache.org/repos/asf/portals-pluto.git
+  https://github.com/apache/portals-pluto.git
+
+Read-write (for committers):
+
+  https://git-wip-us.apache.org/repos/asf/portals-pluto.git
+

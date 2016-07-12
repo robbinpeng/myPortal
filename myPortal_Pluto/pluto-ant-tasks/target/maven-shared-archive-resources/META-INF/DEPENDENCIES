@@ -1,0 +1,45 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache Pluto Ant Tasks
+
+
+From: 'an unknown organization'
+  - jaxb-impl  com.sun.xml.bind:jaxb-impl:jar:2.1.9
+
+  - CLI  commons-cli:commons-cli:jar:1.0
+
+  - Lang  commons-lang:commons-lang:jar:1.0
+
+  - JavaBeans Activation Framework (JAF) (http://java.sun.com/products/javabeans/jaf/index.jsp) javax.activation:activation:jar:1.1
+    License: Common Development and Distribution License (CDDL) v1.0  (https://glassfish.dev.java.net/public/CDDLv1.0.html)
+  - jaxb-api  javax.xml.bind:jaxb-api:jar:2.1
+
+  - Streaming API for XML  javax.xml.stream:stax-api:jar:1.0-2
+    License: GNU General Public Library  (http://www.gnu.org/licenses/gpl.txt)    License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0  (http://www.sun.com/cddl/cddl.html)
+  - StAX (http://stax.codehaus.org/) stax:stax:jar:1.2.0
+
+
+From: 'QOS.ch' (http://www.qos.ch)
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.5.6
+
+  - SLF4J JDK14 Binding (http://www.slf4j.org) org.slf4j:slf4j-jdk14:jar:1.5.6
+
+
+From: 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - IO (http://jakarta.apache.org/commons/io/) commons-io:commons-io:jar:1.3.1
+    License: The Apache Software License, Version 2.0  (/LICENSE.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Apache Pluto Portlet Container (http://portals.apache.org/pluto/pluto-container) org.apache.portals.pluto:pluto-container:bundle:2.1.0-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Pluto Container API (http://portals.apache.org/pluto/pluto-container-api) org.apache.portals.pluto:pluto-container-api:bundle:2.1.0-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Pluto Utilities (http://portals.apache.org/pluto/pluto-util) org.apache.portals.pluto:pluto-util:bundle:2.1.0-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

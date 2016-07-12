@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bundle-Description: The Apache Pluto portlet container.
+Implementation-Title: Apache Pluto Portlet Container
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.portals.pluto.container
+Implementation-Version: 2.1.0-SNAPSHOT
+Built-By: ChiFuF
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1468289042583
+Bundle-DocURL: http://portals.apache.org/pluto/pluto-container
+Bundle-Vendor: The Apache Software Foundation
+Import-Package: javax.ccpp,javax.portlet;version="2.0",javax.servlet,j
+ avax.servlet.http,javax.xml,javax.xml.bind,javax.xml.bind.annotation,
+ javax.xml.bind.annotation.adapters,javax.xml.bind.helpers,javax.xml.n
+ amespace,javax.xml.parsers,javax.xml.stream,javax.xml.stream.events,j
+ avax.xml.stream.util,javax.xml.xpath,org.apache.pluto.container,org.a
+ pache.pluto.container.impl,org.apache.pluto.container.om.portlet,org.
+ apache.pluto.container.om.portlet.impl,org.apache.pluto.container.om.
+ portlet10.impl,org.apache.pluto.container.util,org.slf4j;version="1.5
+ ",org.w3c.dom,org.xml.sax
+Tool: Bnd-0.0.357
+Export-Package: org.apache.pluto.container.impl;uses:="org.apache.plut
+ o.container.om.portlet,javax.xml,javax.xml.namespace,javax.portlet,or
+ g.apache.pluto.container,org.apache.pluto.container.util,javax.servle
+ t.http,javax.servlet,org.slf4j,javax.xml.stream,javax.xml.stream.util
+ ,javax.xml.stream.events,org.xml.sax,javax.xml.bind.helpers,org.w3c.d
+ om,org.apache.pluto.container.om.portlet10.impl,javax.xml.parsers,org
+ .apache.pluto.container.om.portlet.impl,javax.xml.xpath,javax.xml.bin
+ d,javax.ccpp",org.apache.pluto.container.om.portlet.impl;uses:="javax
+ .xml.bind.annotation,javax.xml.bind.annotation.adapters,org.apache.pl
+ uto.container.om.portlet,javax.xml.namespace,javax.xml.bind,javax.xml
+ ",org.apache.pluto.container.om.portlet10.impl;uses:="javax.xml.bind.
+ annotation,javax.xml.bind.annotation.adapters,javax.xml.namespace,jav
+ ax.xml.bind,org.apache.pluto.container.om.portlet,org.apache.pluto.co
+ ntainer.om.portlet.impl",org.apache.pluto.container.util;uses:="org.s
+ lf4j,javax.servlet"
+Bundle-Version: 2.1.0.SNAPSHOT
+Bundle-Name: Apache Pluto Portlet Container
+Created-By: Apache Maven Bundle Plugin
+Specification-Version: 2.1.0-SNAPSHOT
+Build-Jdk: 1.8.0_65
+
